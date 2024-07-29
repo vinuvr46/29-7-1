@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time Character Counter</h1>
+        <textarea id="textInput" placeholder="Please write your text here..." maxlength="50"></textarea>
+        <div class="counter">
+            <span>Total Characters: <span id="totalChars">0</span></span>
+            <span>Remaining: <span id="remainingChars">50</span></span>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #bec0f2;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #90aef4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 2px solid #141212;
+            box-sizing: border-box;
+        }
+
+        .counter {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+        
+    <script>
+        document.getElementById('textInput').addEventListener('input', function() {
+    const textLength = this.value.length;
+    document.getElementById('totalChars').innerText = textLength;
+    document.getElementById('remainingChars').innerText = 50 - textLength;
+});
+    </script>
+</body>
+</html>
